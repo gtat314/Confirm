@@ -1,0 +1,132 @@
+/*
+	@modCssClasses
+	@customTag: confirm-mod
+	--theme-errorFont 							rgba(255, 68, 68, 1)
+	--theme-inputBackgroundColor 				rgba(0, 0, 0, 0)
+	--theme-modal-backdropFilter 				blur(2px)
+	--theme-modal-backgroundColor 				rgba(17, 17, 17, 1)
+	--theme-modal-boxShadow 					rgba(0, 0, 0, 1)
+	--theme-modalButton-backgroundColor 		rgba(68, 68, 255, 1)
+	--theme-modalButton-backgroundColorFocus 	rgba(87, 87, 255, 1)
+	--theme-modalText-color 					rgba(255, 255, 255, 1)
+	--theme-transitionDuration 					0.15s
+	--theme-whiteOnBlack1 						rgba(255, 255, 255, 0.1)
+*/
+
+
+
+
+confirm-mod {
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	max-width: 100%;
+	right: 0;
+	z-index: 50;
+	display: flex;
+	backdrop-filter: var(--theme-modal-backdropFilter, blur(1rem));
+}
+
+confirm-mod .content {
+	width: 30rem;
+	background-color: var(--theme-modal-backgroundColor, rgba(17, 17, 17, 1));
+	padding-top: 2rem;
+	padding-right: 2rem;
+	padding-bottom: 2rem;
+	padding-left: 2rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	border-bottom-right-radius: 0.5rem;
+	border-bottom-left-radius: 0.5rem;
+	box-shadow: 0 0 2rem var(--theme-modal-boxShadow, rgba(0, 0, 0, 1));
+	max-width: 95%;
+}
+
+confirm-mod .content .text {
+	color: var(--theme-modalText-color, rgba(255, 255, 255, 1));
+	font-size: 0.9rem;
+	margin-bottom: 3rem;
+}
+
+confirm-mod .content .buttons {
+	justify-content: flex-end;
+	gap: 1rem;
+	display: flex;
+}
+
+confirm-mod .content .buttons .button {
+	background-color: var(--theme-whiteOnBlack1, rgba(255, 255, 255, 0.1));
+	color: var(--theme-modalText-color, rgba(255, 255, 255, 1));
+	font-weight: 900;
+	line-height: 3rem;
+	padding-right: 1rem;
+	padding-left: 1rem;
+	border-top-left-radius: 0.25rem;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+	text-transform: uppercase;
+	transition-property: background-color, opacity;
+	transition-duration: var(--theme-transitionDuration, 0.15s);
+	cursor: pointer;
+	opacity: 0.9;
+}
+
+confirm-mod .content .buttons .button:hover {
+	opacity: 1;
+}
+
+confirm-mod .content .buttons .button.deny {
+	background-color: var(--theme-inputBackgroundColor, rgba(0, 0, 0, 0));
+}
+
+confirm-mod .content .buttons .button.deny:hover {
+	background-color: var(--theme-whiteOnBlack1, rgba(255, 255, 255, 0.1));
+}
+
+confirm-mod .content .buttons .button.main {
+	background-color: var(--theme-modalButton-backgroundColor, rgba(68, 68, 255, 1));
+}
+
+confirm-mod .content .buttons .button.main:hover {
+	background-color: var(--theme-modalButton-backgroundColorFocus, rgba(87, 87, 255, 1));
+}
+
+confirm-mod.delete .content .buttons .button.main {
+	background-color: var(--theme-errorFont, rgba(255, 68, 68, 1));
+}
+
+
+
+
+@media only screen and (max-device-width: 680px) {
+
+    confirm-mod {
+        height: 100%;
+    }
+
+}
+
+
+
+
+@media only screen and (max-device-width: 400px) {
+
+	confirm-mod .content .text {
+		text-align: center;
+	}
+
+	confirm-mod .content .buttons {
+		flex-direction: column-reverse;
+		align-items: center;
+	}
+
+	confirm-mod .content .buttons .button {
+		line-height: 3rem;
+		min-width: 10rem;
+	}
+
+}
