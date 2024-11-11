@@ -1,27 +1,5 @@
 /**
  * 
- * @employSchema
- * @eventListeners
- * @sensibleDefaults
- * @svgSrc
- * @documentation
- * @iconUniformNames
- * @documentationApi
- * @objectifyEventListeners
- * @distinctEventListeners
- * @minimizeProperties
- * @parentElementSelector
- * @propertiesElemUnderscore
- * @propertyNamingConventions
- * @propertify
- * @methodNamingConventions
- */
-
-
-
-
-/**
- * 
  * @param {Object}               schema
  * @param {Boolean}             [schema.delete]
  * @param {Object}              [schema.no]
